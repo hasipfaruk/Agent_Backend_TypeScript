@@ -154,13 +154,27 @@ console.log("NODE_ENV:", process.env.NODE_ENV);
 console.log("DATABASE_URL from process.env:", process.env.DATABASE_URL ? "Found" : "Not found");
 // Create Express app
 const app = express();
-// Use CORS middleware
-app.use(cors({
+// // Use CORS middleware
+// app.use(cors({
+//   origin: 'https://agent-f-end-vercel.vercel.app',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true,
+// }));
+
+
+// add by haseeb 
+
+// enable CORS preflight across the board
+app.options('*', cors({
   origin: 'https://agent-f-end-vercel.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization'],
   credentials: true,
 }));
+
+
+
 // Add body parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
