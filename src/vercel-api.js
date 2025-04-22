@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   // Allow requests from any origin
   const origin = req.headers.origin;
-  res.setHeader('Access-Control-Allow-Origin', origin || '*');
+  res.setHeader('Access-Control-Allow-Origin', origin || 'https://agent-f-end-vercel.vercel.app/');
   
   // Allow credentials
   res.setHeader('Access-Control-Allow-Credentials', 'true');
