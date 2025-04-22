@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 // Add CORS middleware with proper WebSocket headers
 app.use((req, res, next) => {
   // For local development, allow all origins
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://agent-f-end-vercel.vercel.app');
   
   // Allow credentials
   res.setHeader('Access-Control-Allow-Credentials', 'true');
