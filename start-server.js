@@ -2,10 +2,11 @@
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
-
+const cors = require('cors');
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+app.use(cors({ origin: 'http://143.198.151.97' }));
 // Kill any existing processes on port 3000
 console.log('Checking for existing processes on port 3000...');
 try {
